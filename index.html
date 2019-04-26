@@ -33,22 +33,24 @@
   index = 0
   while (index < keys['length']) {
     div = document.createElement('div')
+    div.className = 'row'
     main.appendChild(div)
     row = keys[index]
     index2 = 0
     while (index2 < row.length) {
       kbd = document.createElement('kbd')
       kbd.textContent = row[index2]
-      buttonX = document.createElement('button')
-      buttonX.textContent = '编辑'
-      buttonX.id = row[index2]
-      buttonX.onclick = function(ex) {
+      kbd.className = 'key'
+      button = document.createElement('button')
+      button.textContent = '编辑'
+      button.id = row[index2]
+      button.onclick = function (ex) {
         key = ex['target']['id']
         x = prompt('给我一个网址')
         hash[key] = x
         localStorage.setItem('zzz', JSON.stringify(hash))
       }
-      kbd.appendChild(buttonX)
+      kbd.appendChild(button)
       div.appendChild(kbd)
       index2 += 1
     }
