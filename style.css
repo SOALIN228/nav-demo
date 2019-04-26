@@ -28,7 +28,7 @@ kbd:hover > button {
 }
 
 body {
-    background: red url("wall.jpg") no-repeat center center;
+    background: grey url("wall.jpg") no-repeat center center;
     background-size: cover;
 }
 
@@ -90,4 +90,19 @@ main {
     position: absolute;
     left: 4px;
     top: 2px;
+}
+
+.key button {
+    position: absolute;
+    right: 4px;
+    bottom: 2px;
+    width: 17px;
+    height: 17px;
+    outline: none;
+    border: none;
+    background-color: #ffa500;
+    color: #fff;
+    font-size: 12px;
+    border-radius: 2px;
+    font-weight: 900;
 }
