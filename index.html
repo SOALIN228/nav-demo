@@ -39,17 +39,27 @@
     index2 = 0
     while (index2 < row.length) {
       kbd = document.createElement('kbd')
-      kbd.textContent = row[index2]
+      span = document.createElement('span')
+      span.textContent = row[index2]
+      span.className = 'text'
+      kbd.appendChild(span)
       kbd.className = 'key'
       button = document.createElement('button')
       button.textContent = '编辑'
       button.id = row[index2]
+      img = document.createElement('img')
+      if (hash[row[index2]]) {
+        img.src = 'https://' + hash[row[index2]] + '/favicon.ico'
+      } else {
+        img.src = '//i.loli.net/2019/04/26/5cc2e15fad8c9.png'
+      }
       button.onclick = function (ex) {
         key = ex['target']['id']
         x = prompt('给我一个网址')
         hash[key] = x
         localStorage.setItem('zzz', JSON.stringify(hash))
       }
+      kbd.appendChild(img)
       kbd.appendChild(button)
       div.appendChild(kbd)
       index2 += 1
